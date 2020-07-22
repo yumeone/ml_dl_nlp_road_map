@@ -1,4 +1,4 @@
 
 ## Contents:
 
-```basic_temp``` : Basic blog post usinh html and css
+```basic_temp``` : Basic blog post using html and css.
