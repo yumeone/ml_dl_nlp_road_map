@@ -12,11 +12,9 @@ This list takes a lot of time and effort to finish if you want to do it properly
 
 ###  Linear Algebra and Multivariate Calculus
 
- <a href='https://www.youtube.com/user/khanacademy'>Khan Academy - Multivariable Calculus</a>
- Khan Academy - Differential Equations
- Khan Academy - Linear Algebra
- 3Blue1Brown - Essence of Linear Algebra
-Source: 
+ <a href='https://www.youtube.com/user/khanacademy'>Khan Academy</a>
+ <a href='https://www.youtube.com/c/3blue1brown/playlists'>3 Blue1 brown</a>
+
 
 analyticsvidhya,
 
