@@ -21,3 +21,5 @@ This list takes a lot of time and effort to finish if you want to do it properly
 
 <a href='https://medium.com/@uttam94'>Medium </a></br>
 
+<a href='https://www.kdnuggets.com/'>Medium </a></br>
+
