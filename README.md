@@ -17,3 +17,7 @@ This list takes a lot of time and effort to finish if you want to do it properly
 
 
 ### Blogs
+
+
+<a href='https://medium.com/'>Khan Academy</a></br>
+
