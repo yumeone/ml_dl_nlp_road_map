@@ -12,7 +12,7 @@ This list takes a lot of time and effort to finish if you want to do it properly
 
 ###  Linear Algebra and Multivariate Calculus
 
- <a href='https://www.youtube.com/user/khanacademy'>Khan Academy</a>
+ <a href='https://www.youtube.com/user/khanacademy'>Khan Academy</a></br>
  <a href='https://www.youtube.com/c/3blue1brown/playlists'>3 Blue1 brown</a>
 
 
