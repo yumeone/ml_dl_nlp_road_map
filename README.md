@@ -10,14 +10,13 @@ A complete study plan to become a Machine Learning Engineer with links to all FR
 If you finish the list you will be equipped with enough theoretical and practical experience to get started in the industry!
 This list takes a lot of time and effort to finish if you want to do it properly! T
 
-###  Videos 
+### Statistics, calculus and differentiation  
 
  <a href='https://www.youtube.com/user/khanacademy'>Khan Academy</a></br>
  <a href='https://www.youtube.com/c/3blue1brown/playlists'>3 Blue1 brown</a>
 
 
 ### Blogs
-
 
 <a href='https://medium.com/@uttam94'>Medium </a></br>
 <a href='https://www.kdnuggets.com/'>Kdnuggets</a></br>
