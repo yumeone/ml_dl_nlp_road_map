@@ -38,6 +38,7 @@ Handler objects are responsible for dispatching the appropriate log messages to 
 When you have a large application that logs many events to a file, and you only need to keep track of the most recent events, then use a RotatingFileHandler that keeps the files small. When the log reaches a certain number of bytes, it gets "rolled over". You can also keep multiple backup log files before overwriting them.
 
 *   roll over after 2KB, and keep backup logs app.log.1, app.log.2 , etc.
+
     handler = RotatingFileHandler('app.log', maxBytes=2000, backupCount=5)
 
 
@@ -46,6 +47,7 @@ When you have a large application that logs many events to a file, and you only 
 If your application will be running for a long time, you can use a TimedRotatingFileHandler. This will create a rotating log based on how much time has passed. Possible time conditions for the when parameter are: - second (s) - minute (m) - hour (h) - day (d) - w0-w6 (weekday, 0=Monday) - midnight
 
 *   This will create a new log file every minute, and 5 backup files with a timestamp before overwriting old logs.
+
     handler = TimedRotatingFileHandler('timed_test.log', when='m', interval=1, backupCount=5)
 
 
