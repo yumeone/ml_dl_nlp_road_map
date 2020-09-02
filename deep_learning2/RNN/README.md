@@ -3,6 +3,8 @@
 
 Recurrent Neural Networks(RNN) are a type of Neural Network where the output from the previous step is fed as input to the current step.
 
+Recurrent Neural Networks (RNN) are a class of Artificial Neural Networks that can process a sequence of inputs in deep learning and retain its state while processing the next sequence of inputs. Traditional neural networks will process an input and move onto the next one disregarding its sequence
+
 #### Use case:
 
 ![img.png](https://miro.medium.com/max/875/1*hEa9ciQBUQcN2rtIDoK3CA.png)
