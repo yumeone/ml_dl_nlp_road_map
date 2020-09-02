@@ -13,6 +13,8 @@ Recurrent Neural Networks (RNN) are a class of Artificial Neural Networks that c
 
 formula for current cell state. 
 
+RNN cell takes in two inputs, output from the last hidden state{h(t-1} and observation at time = t x(t)
+
 ![img.png](https://cdn.analyticsvidhya.com/wp-content/uploads/2017/12/06004252/hidden-state.png)
 
 ![img.png](https://cdn.analyticsvidhya.com/wp-content/uploads/2017/12/06005300/eq2.png)
