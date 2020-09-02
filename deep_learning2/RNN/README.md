@@ -19,10 +19,11 @@ formula for current cell state.
 
 
 output state:
+
 ![img.png](https://cdn.analyticsvidhya.com/wp-content/uploads/2017/12/06005750/outeq.png)
 
-First, it takes the x(0) from the sequence of input and then it outputs h(0) which together with x(1) is the input for the next step. 
-So, the h(0) and x(1) is the input for the next step. Similarly, h(1) from the next is the input with x(2) for the next step and so on. 
+First, it takes the x(t-1) from the sequence of input and then it outputs h(t-1) which together with x(t) is the input for the next step. 
+So, the h(t-1) and x(t) is the input for the next step. Similarly, h(t) from the next is the input with x(t) for the next step and so on. 
 This way, it keeps remembering the context while training.
 
 #### Advantages of an RNN
