@@ -4,7 +4,14 @@
 Recurrent Neural Networks(RNN) are a type of Neural Network where the output from the previous step is fed as input to the current step.
 
 * uses:
+
 predict the next word in a given sentence
+Next word prediction.
+Music composition.
+Image captioning
+Speech recognition
+Time series anomaly detection
+Stock market prediction
 
 ![img.png](https://miro.medium.com/max/875/1*NKhwsOYNUT5xU7Pyf6Znhg.png)
 
