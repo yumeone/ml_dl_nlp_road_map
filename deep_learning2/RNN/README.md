@@ -17,12 +17,17 @@ RNN cell takes in two inputs, output from the last hidden state{h(t-1} and obser
 
 ![img.png](https://cdn.analyticsvidhya.com/wp-content/uploads/2017/12/06004252/hidden-state.png)
 
+```ht -> current state,ht-1 -> previous state,xt -> input state```
+
 ![img.png](https://cdn.analyticsvidhya.com/wp-content/uploads/2017/12/06005300/eq2.png)
 
+```whh -> weight at recurrent neuron,wxh -> weight at input neuron```
 
 output state:
 
 ![img.png](https://cdn.analyticsvidhya.com/wp-content/uploads/2017/12/06005750/outeq.png)
+
+```Yt -> output,Why -> weight at output layer```
 
 First, it takes the x(t-1) from the sequence of input and then it outputs h(t-1) which together with x(t) is the input for the next step. 
 So, the h(t-1) and x(t) is the input for the next step. Similarly, h(t) from the next is the input with x(t) for the next step and so on. 
