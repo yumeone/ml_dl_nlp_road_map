@@ -43,13 +43,21 @@ To review, the Forget gate decides what is relevant to keep from prior steps. Th
 GRU’s got rid of the cell state and used the hidden state to transfer information. It also only has two gates, a reset gate and update gate.
 
 
-* ```Update Gate ``` : The update gate acts similar to the forget and input gate of an LSTM. It decides what information to throw away and what new information to add.
+* ```Update Gate(Z_t) ``` : The update gate acts similar to the forget and input gate of an LSTM. It decides what information to throw away and what new information to add.
 
 When x_t is plugged into the network unit,  The same goes for h_(t-1) which holds the information for the previous t-1 units ,it is multiplied by its own respective  weights W(z). Both results are added together and a sigmoid activation function is applied to squash the result between 0 and 1.
 
 ![img.png](https://miro.medium.com/max/1580/1*1HJUlwKMWmAkHhUkwy9g3g.png)
 
-* ```Reset Gate``` : The reset gate is another gate is used to decide how much past information to forget.This formula is the same as the one for the update gate. The difference comes in the weights and the gate’s usage
+* ```Reset Gate(r_t)``` : The reset gate is another gate is used to decide how much past information to forget.This formula is the same as the one for the update gate. The difference comes in the weights and the gate’s usage. plug in h_(t-1)  and x_t , multiply them with their corresponding weights, sum the results and apply the sigmoid function.
+
+* We introduce a new memory content(h'_t) which will use the reset gate to store the relevant information from the past.Multiply the input x_t  and h_(t-1) with a weight respective weights W.
+ The text starts with “This is a fantasy book which illustrates…” and after a couple paragraphs ends with “I didn’t quite enjoy the book because I think it captures too many details.” To determine the overall level of satisfaction from the book we only need the last part of the review. In that case as the neural network approaches to the end of the text it will learn to assign r_t vector close to 0, washing out the past and focusing only on the last sentences.
+
+* As the last step, the network needs to calculate h_t — vector which holds information for the current unit and passes it down to the network. In order to do that the update gate is needed. It determines what to collect from the current memory content — h’_t and what from the previous steps — h_(t-1).
+  ##### Apply element-wise multiplication to the update gate{ z_t and h_(t-1)} and {(1-z_t) and h’_t} and sum it 
+  
+  Let’s bring up the example about the book review. This time, the most relevant information is positioned in the beginning of the text. The model can learn to set the vector z_t close to 1 and keep a majority of the previous information. Since z_t will be close to 1 at this time step, 1-z_t will be close to 0 which will ignore big portion of the current content (in this case the last part of the review which explains the book plot) which is irrelevant for our prediction
 
 
 
@@ -61,5 +69,7 @@ When x_t is plugged into the network unit,  The same goes for h_(t-1) which hold
 * https://www.analyticsvidhya.com/blog/2017/12/fundamentals-of-deep-learning-introduction-to-lstm/
 * https://medium.com/@shiyan/understanding-lstm-and-its-diagrams-37e2f46f1714
 * http://nikhilbuduma.com/2015/01/11/a-deep-dive-into-recurrent-neural-networks/
+
+* https://towardsdatascience.com/understanding-gru-networks-2ef37df6c9be
 
 
