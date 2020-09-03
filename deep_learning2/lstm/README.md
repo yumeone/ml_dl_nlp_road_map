@@ -12,6 +12,16 @@ To review, the Forget gate decides what is relevant to keep from prior steps. Th
 
 ![img.png](https://i.stack.imgur.com/aTDpS.png)
 
+* Each LSTM cell has three inputs h_{t-1},C_{t-1} and x_t and two outputs h_t and C_t. 
+
+* For a given time t, h_t is the hidden state, C_t is the cell state or memory, x_t is the current data point or input. 
+
+* The first sigmoid layer has two inputs–h_{t-1} and x_t where h_{t-1} is the hidden state of the previous cell. It is known as the forget gate as its output selects the amount of information of the previous cell to be included. The output is a number in [0,1] which is multiplied (point-wise) with the previous cell state C_{t-1}.
+
+* The second sigmoid layer is the input gate that decides what new information is to be added to the cell. It takes two inputs h_{t-1} and x_t. The tanh layer creates a vector C_t of the new candidate values. Together, these two layers determine the information to be stored in the cell state. Their point-wise multiplication ( i_t ? C_t ) tells us the amount of information to be added to the cell state. The result is then added with the result of the forget gate multiplied with previous cell state ( f_t* C_{t-1} ) to produce the current cell state C_t. 
+
+* Next, the output of the cell is calculated using a sigmoid and a tanh layer. The sigmoid layer decides which part of the cell state will be present in the output whereas tanh layer shifts the output in the range of [-1,1]. The results of the two layers undergo point-wise multiplication to produce the output ht of the cell.
+
 
 #### Resource:
 
