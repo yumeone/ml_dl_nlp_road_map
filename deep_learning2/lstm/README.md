@@ -5,6 +5,8 @@ LSTM networks are a type of RNN that uses special units in addition to standard 
 
 * LSTM ’s and GRU’s were created as the solution to short-term memory. They have internal mechanisms called gates that can regulate the flow of information.
 
+![img.png](https://miro.medium.com/max/875/1*yBXV9o5q7L_CvY7quJt3WQ.png)
+
 LSTM units include a 'memory cell' that can maintain information in memory for long periods of time. ... Standard RNNs (Recurrent Neural Networks) suffer from vanishing and exploding gradient problems.
 
 This model uses the notion of gates and has three :
@@ -38,7 +40,18 @@ To review, the Forget gate decides what is relevant to keep from prior steps. Th
 
 ### GRU : 
 
-![img.png](https://miro.medium.com/max/875/1*yBXV9o5q7L_CvY7quJt3WQ.png)
+GRU’s got rid of the cell state and used the hidden state to transfer information. It also only has two gates, a reset gate and update gate.
+
+
+* ```Update Gate ``` : The update gate acts similar to the forget and input gate of an LSTM. It decides what information to throw away and what new information to add.
+
+When x_t is plugged into the network unit,  The same goes for h_(t-1) which holds the information for the previous t-1 units ,it is multiplied by its own respective  weights W(z). Both results are added together and a sigmoid activation function is applied to squash the result between 0 and 1.
+
+![img.png](https://miro.medium.com/max/1580/1*1HJUlwKMWmAkHhUkwy9g3g.png)
+
+* ```Reset Gate``` : The reset gate is another gate is used to decide how much past information to forget.This formula is the same as the one for the update gate. The difference comes in the weights and the gate’s usage
+
+
 
 #### Resource:
 
