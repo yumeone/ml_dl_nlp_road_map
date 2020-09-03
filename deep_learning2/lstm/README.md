@@ -23,7 +23,19 @@ To review, the Forget gate decides what is relevant to keep from prior steps. Th
 * Next, the output of the cell is calculated using a sigmoid and a tanh layer. The sigmoid layer decides which part of the cell state will be present in the output whereas tanh layer shifts the output in the range of [-1,1]. The results of the two layers undergo point-wise multiplication to produce the output ht of the cell.
 
 
+#### Drawbacks:
+
+* the cell has become quite complex now with the additional features (such as forget gates) being brought into the picture
+* LSTMs are prone to overfitting 
+* LSTMs get affected by different random weight initializations
+
 #### Resource:
 
 * https://colah.github.io/posts/2015-08-Understanding-LSTMs/
+* https://medium.com/@purnasaigudikandula/recurrent-neural-networks-and-lstm-explained-7f51c7f6bbb9
 * https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21
+* https://www.analyticsvidhya.com/blog/2017/12/fundamentals-of-deep-learning-introduction-to-lstm/
+* https://medium.com/@shiyan/understanding-lstm-and-its-diagrams-37e2f46f1714
+* http://nikhilbuduma.com/2015/01/11/a-deep-dive-into-recurrent-neural-networks/
+
+
