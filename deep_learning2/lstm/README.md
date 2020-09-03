@@ -1,5 +1,5 @@
 
-### LSTM(Long Short Term Memory) and GRU:
+### LSTM(Long Short Term Memory) and GRU(Gated Recurrent Unit):
 
 LSTM networks are a type of RNN that uses special units in addition to standard units. 
 
