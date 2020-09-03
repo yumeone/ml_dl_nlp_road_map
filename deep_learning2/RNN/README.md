@@ -42,8 +42,9 @@ This way, it keeps remembering the context while training.
 
 #### Disadvantages of an RNN
 
-* Vanishing Gradient Problem,As more layers containing activation functions are added, the gradient of the loss function approaches zero
-* Not suited for predicting long horizons
+* Recurrent Neural Networks suffer from short-term memory. If a sequence is long enough, they’ll have a hard time carrying information from earlier time steps to later ones. So if you are trying to process a paragraph of text to do predictions, RNN’s may leave out important information from the beginning.
+
+* During back propagation, recurrent neural networks suffer from the vanishing gradient problem. Gradients are values used to update a neural networks weights. The vanishing gradient problem is when the gradient shrinks as it back propagates through time. If a gradient value becomes extremely small, it doesn’t contribute too much learning
 
 #### Resources: 
 
