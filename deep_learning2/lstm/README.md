@@ -1,7 +1,11 @@
 
-### LSTM(Long Short Term Memory):
+### LSTM(Long Short Term Memory) and GRU:
 
-LSTM networks are a type of RNN that uses special units in addition to standard units. LSTM units include a 'memory cell' that can maintain information in memory for long periods of time. ... Standard RNNs (Recurrent Neural Networks) suffer from vanishing and exploding gradient problems.
+LSTM networks are a type of RNN that uses special units in addition to standard units. 
+
+* LSTM ’s and GRU’s were created as the solution to short-term memory. They have internal mechanisms called gates that can regulate the flow of information.
+
+LSTM units include a 'memory cell' that can maintain information in memory for long periods of time. ... Standard RNNs (Recurrent Neural Networks) suffer from vanishing and exploding gradient problems.
 
 This model uses the notion of gates and has three :
 * Input gate i: controls the flow of incoming information.
@@ -16,9 +20,11 @@ To review, the Forget gate decides what is relevant to keep from prior steps. Th
 
 * For a given time t, h_t is the hidden state, C_t is the cell state or memory, x_t is the current data point or input. 
 
-* The first sigmoid layer has two inputs–h_{t-1} and x_t where h_{t-1} is the hidden state of the previous cell. It is known as the forget gate as its output selects the amount of information of the previous cell to be included. The output is a number in [0,1] which is multiplied (point-wise) with the previous cell state C_{t-1}.
+* The first sigmoid layer has two inputs–h_{t-1} and x_t where h_{t-1} is the hidden state of the previous cell. It is known as the ```forget gate``` as its output selects the amount of information of the previous cell to be included. The output is a number in [0,1] which is multiplied (point-wise) with the previous cell state C_{t-1}. Instead of squishing values between -1 and 1, it squishes values between 0 and 1. That is helpful to update or forget data because any number getting multiplied by 0 is 0, causing values to disappears or be “forgotten.” Any number multiplied by 1 is the same value therefore that value stay’s the same or is “kept.” 
 
-* The second sigmoid layer is the input gate that decides what new information is to be added to the cell. It takes two inputs h_{t-1} and x_t. The tanh layer creates a vector C_t of the new candidate values. Together, these two layers determine the information to be stored in the cell state. Their point-wise multiplication ( i_t ? C_t ) tells us the amount of information to be added to the cell state. The result is then added with the result of the forget gate multiplied with previous cell state ( f_t* C_{t-1} ) to produce the current cell state C_t. 
+* The second sigmoid layer is the ```input gate``` that decides what new information is to be added to the cell. It takes two inputs h_{t-1} and x_t. The tanh layer creates a vector C_t of the new candidate values. Together, these two layers determine the information to be stored in the cell state. 
+
+* Their point-wise multiplication ( i_t ? C_t ) tells us the amount of information to be added to the ```cell state```. The result is then added with the result of the forget gate multiplied with previous cell state ( f_t* C_{t-1} ) to produce the current cell state C_t. 
 
 * Next, the output of the cell is calculated using a sigmoid and a tanh layer. The sigmoid layer decides which part of the cell state will be present in the output whereas tanh layer shifts the output in the range of [-1,1]. The results of the two layers undergo point-wise multiplication to produce the output ht of the cell.
 
@@ -28,6 +34,11 @@ To review, the Forget gate decides what is relevant to keep from prior steps. Th
 * the cell has become quite complex now with the additional features (such as forget gates) being brought into the picture
 * LSTMs are prone to overfitting 
 * LSTMs get affected by different random weight initializations
+
+
+### GRU : 
+
+![img.png](https://miro.medium.com/max/875/1*yBXV9o5q7L_CvY7quJt3WQ.png)
 
 #### Resource:
 
