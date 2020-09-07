@@ -26,7 +26,7 @@ Given a training set, this technique learns to generate new data with the same s
 * The Generator and the Discriminator are both Neural Networks and they both run in competition with each other in the training phase. The steps are repeated several times and in this, the Generator and Discriminator get better and better in their respective jobs after each repetition. The GAN model eventually converges and produces natural look images.
 
 
-###
+###  Loss in GAN
 
 ```Binary Cross Entrophy```
 
@@ -36,8 +36,27 @@ Given a training set, this technique learns to generate new data with the same s
 
 * The GANs are formulated as a minimax game, where the Discriminator is trying to minimize its reward V(D, G) and the Generator is trying to minimize the Discriminator’s reward or in other words, maximize its loss.
 
+![img.pmg](https://media.geeksforgeeks.org/wp-content/uploads/g22-1.png)
+ in this function .
+  * D(x) is the discriminator's estimate of the probability that real data instance x is real.
+  * G(z) is the generator's output when given noise z
+  * D(G(z)) is the discriminator's estimate of the probability that a fake instance is real.
+  * Ex is the expected value over all real data instances
+  * Ez is the expected value over all random inputs to the generator (in effect, the expected value over all generated fake instances G(z)).
+  
+  
+So, basically, training a GAN has two parts:
+
+* ```Part 1:``` The Discriminator is trained while the Generator is idle. In this phase, the network is only forward propagated and no back-propagation is done. The Discriminator is trained on real data for n epochs, and see if it can correctly predict them as real. Also, in this phase, the Discriminator is also trained on the fake generated data from the Generator and see if it can correctly predict them as fake.
+
+* ```Part 2:``` The Generator is trained while the Discriminator is idle. After the Discriminator is trained by the generated fake data of the Generator, we can get its predictions and use the results for training the Generator and get better from the previous state to try and fool the Discriminator.
+
+The above method is repeated for a few epochs and then manually check the fake data if it seems genuine. If it seems acceptable, then the training is stopped, otherwise, its allowed to continue for few more epochs
+
 
 
 ### Resources: 
+
+* https://papers.nips.cc/paper/5423-generative-adversarial-nets.pdf
 
 * https://developers.google.com/machine-learning/gan
