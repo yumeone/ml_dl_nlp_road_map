@@ -22,10 +22,13 @@ The approach involves two recurrent neural networks, one to encode the input seq
 
 * In the first time step we provide the START_ token so that the decoder starts generating the next token (the actual first word of Marathi sentence). And after the last word in the Marathi sentence, we make the decoder learn to predict the _END token. This will be used as the stopping condition during the inference procedure.Finally the loss is calculated on the predicted outputs from each time step and the errors are back propagated through time in order to update the parameters of the network. 
 
-
+```Summarizing the encoder-decoder```
 ![img.png](https://miro.medium.com/max/1250/1*R8c4QECLVCQ8uYhZxP7mAQ.png)
 
+```During Inference```
+![img.png](https://miro.medium.com/max/1250/1*y3fNvBFJibYF7sVz4FRE0Q.png)
 
+* During inference, we generate one word at a time. Thus the Decoder LSTM is called in a loop, every time processing only one time step.The initial states of the decoder are set to the final states of the encoder.The initial input to the decoder is always the START_ token. At each time step, we preserve the states of the decoder and set them as initial states for the next time step.At each time step, the predicted output is fed as input in the next time step.We break the loop when the decoder predicts the END_ token.
 
 
 #### Applications
