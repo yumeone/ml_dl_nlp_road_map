@@ -26,6 +26,17 @@ Given a training set, this technique learns to generate new data with the same s
 * The Generator and the Discriminator are both Neural Networks and they both run in competition with each other in the training phase. The steps are repeated several times and in this, the Generator and Discriminator get better and better in their respective jobs after each repetition. The GAN model eventually converges and produces natural look images.
 
 
+###
+
+```Binary Cross Entrophy```
+
+![img.png](https://cdn-images-1.medium.com/max/1600/1*C2sWPDEYdLV5wm7dNAmBOQ.png)
+
+* The discriminator outputs a value D(x) indicating the chance that x is a real image.Our objective is to maximize the chance to recognize real images as real and generated images as fake
+
+* The GANs are formulated as a minimax game, where the Discriminator is trying to minimize its reward V(D, G) and the Generator is trying to minimize the Discriminator’s reward or in other words, maximize its loss.
+
+
 
 ### Resources: 
 
