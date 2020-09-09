@@ -23,8 +23,23 @@ Both the encoder and decoder are recurrent neural networks, i.e. using LSTM or G
 * we have a source sequence x of length n and try to output a target sequence y of length m:
 
 * The encoder is a bidirectional RNN (or other recurrent network setting of your choice) with a forward hidden state h→i and a backward one h←i. A simple concatenation of two represents the encoder state. The motivation is to include both the preceding and following words in the annotation of one word.
+ all the vectors h1,h2,h3…., hTx are representations of Tx number of words in the input sentence.
 
 ![img.png](https://cdn.analyticsvidhya.com/wp-content/uploads/2019/11/image9.png)
+
+* The weights are also learned by a feed-forward neural network .The context vector ci for the output word yi is generated using the weighted sum of the annotations:
+
+![img.png](https://cdn.analyticsvidhya.com/wp-content/uploads/2019/11/image8.png)
+
+ The weights αij are computed by a softmax function given by the following equation:
+ 
+ ![img.png](https://cdn.analyticsvidhya.com/wp-content/uploads/2019/11/image11.png)
+ 
+ ![img.png](https://cdn.analyticsvidhya.com/wp-content/uploads/2019/11/image10.png)
+ 
+ eij is the output score of a feedforward neural network described by the function a that attempts to capture the alignment between input at j and output at i.
+
+
 
 
 #### Resources :
