@@ -19,6 +19,13 @@ Both the encoder and decoder are recurrent neural networks, i.e. using LSTM or G
 
 ![img.png](https://lilianweng.github.io/lil-log/assets/images/encoder-decoder-attention.png)
 
+##### How it works: 
+* we have a source sequence x of length n and try to output a target sequence y of length m:
+
+* The encoder is a bidirectional RNN (or other recurrent network setting of your choice) with a forward hidden state h→i and a backward one h←i. A simple concatenation of two represents the encoder state. The motivation is to include both the preceding and following words in the annotation of one word.
+
+![img.png](https://cdn.analyticsvidhya.com/wp-content/uploads/2019/11/image9.png)
+
 
 #### Resources :
  
