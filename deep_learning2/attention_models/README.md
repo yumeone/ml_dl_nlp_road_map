@@ -54,5 +54,7 @@ Both the encoder and decoder are recurrent neural networks, i.e. using LSTM or G
  
  
 <a href = 'https://arxiv.org/pdf/1409.0473.pdf'>Neural_machine_translationby_jointly_learning_to_align_and_trnsalate</a>
+
 <a href = 'https://arxiv.org/pdf/1502.03044.pdf'>Soft and Hard Attention</a>
+
 ```Soft Attention is the global Attention where all image patches are given some weight; but in hard Attention, only one image patch is considered at a time```
