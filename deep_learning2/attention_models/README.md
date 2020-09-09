@@ -8,7 +8,7 @@
 
 <a href = 'https://arxiv.org/pdf/1502.03044.pdf'>Soft and Hard Attention</a>
 
-< a href  = 'https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/'> seq2seq model by jay</a>
+< a href = 'https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/'>seq2seq model by jay</a>
   
   #### Seq2Seq Model problem : 
   The seq2seq model normally has an encoder-decoder architecture, composed of:
