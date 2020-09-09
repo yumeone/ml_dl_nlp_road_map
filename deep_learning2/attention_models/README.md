@@ -9,3 +9,5 @@
 Both the encoder and decoder are recurrent neural networks, i.e. using LSTM or GRU units.
 
 ![img.png](https://lilianweng.github.io/lil-log/assets/images/encoder-decoder-example.png)
+
+*```A critical and apparent disadvantage of this fixed-length context vector design is incapability of remembering long sentences. Often it has forgotten the first part once it completes processing the whole input.``` 
