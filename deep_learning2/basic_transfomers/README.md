@@ -1,7 +1,7 @@
 
 ## Transfomers
 
-### * Resources : 
+###  ```Resources :```
 
 <a href = 'http://jalammar.github.io/illustrated-transformer/'>The Illustrated Transformer by Jay</a>
 
