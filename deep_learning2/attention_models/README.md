@@ -8,9 +8,8 @@
 
 <a href = 'https://arxiv.org/pdf/1502.03044.pdf'>Soft and Hard Attention</a>
 
-< a href = 'https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/'>seq2seq model by jay</a>
   
-  #### Seq2Seq Model problem : 
+ #### Seq2Seq Model problem : 
   The seq2seq model normally has an encoder-decoder architecture, composed of:
 
 * An encoder processes the input sequence and compresses the information into a context vector (also known as sentence embedding or “thought” vector) of a fixed length. This representation is expected to be a good summary of the meaning of the whole source sequence.
@@ -21,6 +20,27 @@ Both the encoder and decoder are recurrent neural networks, i.e. using LSTM or G
 ![img.png](https://lilianweng.github.io/lil-log/assets/images/encoder-decoder-example.png)
 
 *```A critical and apparent disadvantage of this fixed-length context vector design is incapability of remembering long sentences. Often it has forgotten the first part once it completes processing the whole input.``` 
+
+
+#### * Attention model Visual Intuition: 
+
+* model isn’t just mindless aligning the first word at the output with the first word from the input. It actually learned from the training phase how to align words in that language pair.
+
+* the encoder passes a lot more data to the decoder. Instead of passing the last hidden state of the encoding stage, the encoder passes all the hidden states to the decoder:
+
+![img.png](https://github.com/Uttam580/ml_dl_nlp_road_map/blob/master/deep_learning2/basic_transfomers/gif/attention.gif)
+
+```How attention works ?```
+
+* The attention decoder RNN takes in the embedding of the <END> token, and an initial decoder hidden state(h_init).
+* The RNN processes its inputs, producing an output and a new hidden state vector (h4). The output is discarded.
+* Attention Step: We use the encoder hidden states and the h4 vector to calculate a context vector (C4) for this time step.
+* We concatenate h4 and C4 into one vector.
+* We pass this vector through a feedforward neural network (one trained jointly with the model).
+* The output of the feedforward neural networks indicates the output word of this time step.
+* Repeat for the next time steps.
+  
+  ![img.png](https://github.com/Uttam580/ml_dl_nlp_road_map/blob/master/deep_learning2/basic_transfomers/gif/ezgif.com-video-to-gif.gif)
 
 
 #### Attention model: 
