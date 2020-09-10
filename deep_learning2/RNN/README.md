@@ -7,6 +7,19 @@ Recurrent Neural Networks (RNN) are a class of Artificial Neural Networks that c
 
 * LSTM networks are a type of RNN that uses special units in addition to standard units. LSTM units include a 'memory cell' that can maintain information in memory for long periods of time. ... Standard RNNs (Recurrent Neural Networks) suffer from vanishing and exploding gradient problems
 
+
+##### * RNN VIsual intuition
+
+* A RNN takes two inputs at each time step: an input (in the case of the encoder, one word from the input sentence), and a hidden state. The word, however, needs to be represented by a vector. To transform a word into a vector, we turn to the class of methods called “word embedding” algorithms.
+
+* The next RNN step takes the second input vector and hidden state #1 to create the output of that time step.
+
+![img.png](https://github.com/Uttam580/ml_dl_nlp_road_map/blob/master/deep_learning2/basic_transfomers/gif/rnn.gif)
+
+* each pulse for the encoder or decoder is that RNN processing its inputs and generating an output for that time step. Since the encoder and decoder are both RNNs, each time step one of the RNNs does some processing, it updates its hidden state based on its inputs and previous inputs it has seen.The decoder also maintains a hidden states that it passes from one time step to the next. 
+
+![img.png](https://github.com/Uttam580/ml_dl_nlp_road_map/blob/master/deep_learning2/basic_transfomers/gif/seq2seq2.gif)
+
 #### Use case:
 
 ![img.png](https://miro.medium.com/max/875/1*hEa9ciQBUQcN2rtIDoK3CA.png)
