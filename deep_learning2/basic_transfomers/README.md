@@ -39,6 +39,28 @@ A sequence-to-sequence model is a model that takes a sequence of items (words, l
 
 ![img.png](https://github.com/Uttam580/ml_dl_nlp_road_map/blob/master/deep_learning2/basic_transfomers/gif/attention.gif)
 
+### Transformers
+
+```Transformers do not require that the sequential data be processed in the order. For example, if the input data is a natural language sentence, the Transformer does not need to process the beginning of it before the end. Due to this feature, the Transformer allows for much more parallelization than RNNs and therefore reduced training times.```
+
+* Transformers are based on an encoder-decoder architecture that comprises of encoders which consists of a set of encoding layers that processes the input iteratively one layer after another and decoders that consists of a set of decoding layers that does the same thing to the output of the encoder.
+
+![img.png](https://miro.medium.com/max/875/1*V2435M1u0tiSOz4nRBfl4g.png)
+
+* Each encoder consists of two layers: Self-attention and a feed Forward Neural Network.Helps the encoder look at other words in the input sentence as it encodes a specific word
+
+![img.png](http://jalammar.github.io/images/t/Transformer_decoder.png)
+
+* The decoder has both those layers, but between them is an attention layer that helps the decoder focus on relevant parts of the input sentence
+
+So, when we pass a sentence into a transformer, it is embedded and passed into a stack of encoders. The output from the final encoder is then passed into each decoder block in the decoder stack. The decoder stack then generates the output.
+
+![img.png](https://deepfrench.gitlab.io/deep-learning-project/resources/transformer.png)
+
+
+
+
+
 
 
 
