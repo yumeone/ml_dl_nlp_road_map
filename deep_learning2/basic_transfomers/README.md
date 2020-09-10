@@ -51,7 +51,7 @@ A sequence-to-sequence model is a model that takes a sequence of items (words, l
   
   ![img.png](https://github.com/Uttam580/ml_dl_nlp_road_map/blob/master/deep_learning2/basic_transfomers/gif/ezgif.com-video-to-gif.gif)
 
-![img.png](https://github.com/Uttam580/ml_dl_nlp_road_map/blob/master/deep_learning2/basic_transfomers/gif/ezgif.com-video-to-gif.gif)
+
 
 
 
