@@ -47,11 +47,24 @@ A sequence-to-sequence model is a model that takes a sequence of items (words, l
 
 ![img.png](https://miro.medium.com/max/875/1*V2435M1u0tiSOz4nRBfl4g.png)
 
-* Each encoder consists of two layers: Self-attention and a feed Forward Neural Network.Helps the encoder look at other words in the input sentence as it encodes a specific word
+* Each ```encoder``` consists of two layers: Self-attention and a feed Forward Neural Network.Helps the encoder look at other words in the input sentence as it encodes a specific word
 
 ![img.png](http://jalammar.github.io/images/t/Transformer_decoder.png)
 
-* The decoder has both those layers, but between them is an attention layer that helps the decoder focus on relevant parts of the input sentence
+* The ```decoder``` has both those layers, but between them is an attention layer that helps the decoder focus on relevant parts of the input sentence,
+
+
+* As the model processes each word (each position in the input sequence), ```self attention``` allows it to look at other positions in the input sequence for clues that can help lead to a better encoding for this word.
+
+EX: The animal didn't cross the street because it was too tired.
+
+When the model is processing the word “it”, self-attention allows it to associate “it” with “animal”
+
+  1. first step in calculating self-attention is to create three vectors from each of the encoder’s input vectors (in this case, the embedding of each word). So for each word, we create a Query vector, a Key vector, and a Value vector. These vectors are created by multiplying the embedding by three matrices that we trained during the training process.
+  
+ ![img.png](https://i.vimeocdn.com/video/824107246.jpg?mw=1920&mh=1080&q=70)
+  
+   dk is  the column-dimension of vectors Q, K, V.
 
 So, when we pass a sentence into a transformer, it is embedded and passed into a stack of encoders. The output from the final encoder is then passed into each decoder block in the decoder stack. The decoder stack then generates the output.
 
