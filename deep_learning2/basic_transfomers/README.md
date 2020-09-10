@@ -43,6 +43,7 @@ A sequence-to-sequence model is a model that takes a sequence of items (words, l
 
 ```Transformers do not require that the sequential data be processed in the order. For example, if the input data is a natural language sentence, the Transformer does not need to process the beginning of it before the end. Due to this feature, the Transformer allows for much more parallelization than RNNs and therefore reduced training times.```
 
+###### Basic
 * Transformers are based on an encoder-decoder architecture that comprises of encoders which consists of a set of encoding layers that processes the input iteratively one layer after another and decoders that consists of a set of decoding layers that does the same thing to the output of the encoder.
 
 ![img.png](https://miro.medium.com/max/875/1*V2435M1u0tiSOz4nRBfl4g.png)
@@ -60,7 +61,7 @@ So, when we pass a sentence into a transformer, it is embedded and passed into a
 
 ![img.png](https://miro.medium.com/max/875/1*l4iIupatrLqKgaJR7BgdBg.png)
 
-
+###### self attention
 * As the model processes each word (each position in the input sequence), ```self attention``` allows it to look at other positions in the input sequence for clues that can help lead to a better encoding for this word.
 
   EX: The animal didn't cross the street because it was too tired.
@@ -84,9 +85,16 @@ So, when we pass a sentence into a transformer, it is embedded and passed into a
 
 ![img.png](http://jalammar.github.io/images/t/transformer_decoding_1.gif)
 
+* After finishing the encoding phase, we begin the decoding phase. Each step in the decoding phase outputs an element from the output sequence (the English translation sentence in this case).
+The following steps repeat the process until a special symbol is reached indicating the transformer decoder has completed its output. The output of each step is fed to the bottom decoder in the next time step, and the decoders bubble up their decoding results just like the encoders did. And just like we did with the encoder inputs, we embed and add positional encoding to those decoder inputs to indicate the position of each word.
 
+![img.png](http://jalammar.github.io/images/t/transformer_decoding_2.gif)
+
+###### Final Linear and Softmax Layer
 
 * The output of the decoders is passed into a linear layer with softmax activation using which, the correct word is predicted.
+
+![img.png](https://miro.medium.com/max/1250/1*ERDmCo4ihoB7Vntth88DOw.png)
 
 * Once the transformer predicts a word using forward propagation, the prediction is compared with the actual label using a loss function like cross-entropy and then all the trainable parameters are updated using back-propagation.
 
