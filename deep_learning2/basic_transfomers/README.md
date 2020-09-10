@@ -88,7 +88,7 @@ So, when we pass a sentence into a transformer, it is embedded and passed into a
 * After finishing the encoding phase, we begin the decoding phase. Each step in the decoding phase outputs an element from the output sequence (the English translation sentence in this case).
 The following steps repeat the process until a special symbol is reached indicating the transformer decoder has completed its output. The output of each step is fed to the bottom decoder in the next time step, and the decoders bubble up their decoding results just like the encoders did. And just like we did with the encoder inputs, we embed and add positional encoding to those decoder inputs to indicate the position of each word.
 
-![img.png](http://jalammar.github.io/images/t/transformer_decoding_2.gif)
+![img.png](https://github.com/Uttam580/ml_dl_nlp_road_map/blob/master/deep_learning2/basic_transfomers/gif/transformer_decoding_2.gif)
 
 ###### Final Linear and Softmax Layer
 * The output of the decoders is passed into a linear layer with softmax activation using which, the correct word is predicted.
