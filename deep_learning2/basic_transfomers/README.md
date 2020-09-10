@@ -51,20 +51,23 @@ A sequence-to-sequence model is a model that takes a sequence of items (words, l
 
 ![img.png](http://jalammar.github.io/images/t/Transformer_decoder.png)
 
-* The ```decoder``` has both those layers, but between them is an attention layer that helps the decoder focus on relevant parts of the input sentence,
+* The ```decoder``` has both those layers, but between them is an attention layer that helps the decoder focus on relevant parts of the input sentence.The Encoder-Decoder Attention layer works just like multiheaded self-attention, except it creates its Queries matrix from the layer below it, and takes the Keys and Values matrix from the output of the encoder stack. The remaining 2 layers work exactly the same as those in the encoder cell.
+
 
 
 * As the model processes each word (each position in the input sequence), ```self attention``` allows it to look at other positions in the input sequence for clues that can help lead to a better encoding for this word.
 
-EX: The animal didn't cross the street because it was too tired.
+  EX: The animal didn't cross the street because it was too tired.
 
-When the model is processing the word “it”, self-attention allows it to associate “it” with “animal”
+  When the model is processing the word “it”, self-attention allows it to associate “it” with “animal”
 
-  1. first step in calculating self-attention is to create three vectors from each of the encoder’s input vectors (in this case, the embedding of each word). So for each word, we create a Query vector, a Key vector, and a Value vector. These vectors are created by multiplying the embedding by three matrices that we trained during the training process.
+  1. The first step is to calculate the Query, Key, and Value matrices. We do that by packing our embeddings into a matrix X, and multiplying it by the weight matrices we’ve          trained (WQ, WK, WV)
   
  ![img.png](https://i.vimeocdn.com/video/824107246.jpg?mw=1920&mh=1080&q=70)
   
    dk is  the column-dimension of vectors Q, K, V.
+   
+ * ```Position encoding:``` since the self-attention layer does not distinguish the item order in a sequence, a positional encoding layer is used to add sequential information into each sequence item.
 
 So, when we pass a sentence into a transformer, it is embedded and passed into a stack of encoders. The output from the final encoder is then passed into each decoder block in the decoder stack. The decoder stack then generates the output.
 
