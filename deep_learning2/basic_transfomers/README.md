@@ -47,12 +47,18 @@ A sequence-to-sequence model is a model that takes a sequence of items (words, l
 
 ![img.png](https://miro.medium.com/max/875/1*V2435M1u0tiSOz4nRBfl4g.png)
 
+
+So, when we pass a sentence into a transformer, it is embedded and passed into a stack of encoders. The output from the final encoder is then passed into each decoder block in the decoder stack. The decoder stack then generates the output.
+
+![img.png](https://deepfrench.gitlab.io/deep-learning-project/resources/transformer.png)
+
 * Each ```encoder``` consists of two layers: Self-attention and a feed Forward Neural Network.Helps the encoder look at other words in the input sentence as it encodes a specific word
 
 ![img.png](http://jalammar.github.io/images/t/Transformer_decoder.png)
 
 * The ```decoder``` has both those layers, but between them is an attention layer that helps the decoder focus on relevant parts of the input sentence.The Encoder-Decoder Attention layer works just like multiheaded self-attention, except it creates its Queries matrix from the layer below it, and takes the Keys and Values matrix from the output of the encoder stack. The remaining 2 layers work exactly the same as those in the encoder cell.
 
+![img.png](https://miro.medium.com/max/875/1*l4iIupatrLqKgaJR7BgdBg.png)
 
 
 * As the model processes each word (each position in the input sequence), ```self attention``` allows it to look at other positions in the input sequence for clues that can help lead to a better encoding for this word.
@@ -68,10 +74,22 @@ A sequence-to-sequence model is a model that takes a sequence of items (words, l
    dk is  the column-dimension of vectors Q, K, V.
    
  * ```Position encoding:``` since the self-attention layer does not distinguish the item order in a sequence, a positional encoding layer is used to add sequential information into each sequence item.
+ 
+ 
+ ###### Deocder
+ 
+ * The input to the decoder stack is sequential unlike the simultaneous input in encoder stack, meaning the first output word is passed into the decoder as an input using which it generates the second output now this output is again passed as an input to the decoder and using that it generates the third output and so on…
+ 
+ * The encoder start by processing the input sequence. The output of the top encoder is then transformed into a set of attention vectors K and V. These are to be used by each decoder in its “encoder-decoder attention” layer which helps the decoder focus on appropriate places in the input sequence:
 
-So, when we pass a sentence into a transformer, it is embedded and passed into a stack of encoders. The output from the final encoder is then passed into each decoder block in the decoder stack. The decoder stack then generates the output.
+![img.png](http://jalammar.github.io/images/t/transformer_decoding_1.gif)
 
-![img.png](https://deepfrench.gitlab.io/deep-learning-project/resources/transformer.png)
+
+
+* The output of the decoders is passed into a linear layer with softmax activation using which, the correct word is predicted.
+
+* Once the transformer predicts a word using forward propagation, the prediction is compared with the actual label using a loss function like cross-entropy and then all the trainable parameters are updated using back-propagation.
+
 
 
 
