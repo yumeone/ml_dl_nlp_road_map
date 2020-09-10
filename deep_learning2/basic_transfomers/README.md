@@ -39,10 +39,19 @@ A sequence-to-sequence model is a model that takes a sequence of items (words, l
 
 ![img.png](https://github.com/Uttam580/ml_dl_nlp_road_map/blob/master/deep_learning2/basic_transfomers/gif/attention.gif)
 
-*  attention decoder  before producing its output it focus on the parts of the input that are relevant to this decoding time step. For that 
-  1. it Look at the set of encoder hidden states it received – each encoder hidden states is most associated with a certain word in the input sentence. 
-  2.  Give each hidden states a score.
-  3.  Multiply each hidden states by its softmaxed score, thus amplifying hidden states with high scores, and drowning out hidden states with low scores
+```How attention works ?```
+
+* The attention decoder RNN takes in the embedding of the <END> token, and an initial decoder hidden state(h_init).
+* The RNN processes its inputs, producing an output and a new hidden state vector (h4). The output is discarded.
+* Attention Step: We use the encoder hidden states and the h4 vector to calculate a context vector (C4) for this time step.
+* We concatenate h4 and C4 into one vector.
+* We pass this vector through a feedforward neural network (one trained jointly with the model).
+* The output of the feedforward neural networks indicates the output word of this time step.
+* Repeat for the next time steps.
+  
+  ![img.png](https://github.com/Uttam580/ml_dl_nlp_road_map/blob/master/deep_learning2/basic_transfomers/gif/ezgif.com-video-to-gif.gif)
+
+![img.png](https://github.com/Uttam580/ml_dl_nlp_road_map/blob/master/deep_learning2/basic_transfomers/gif/ezgif.com-video-to-gif.gif)
 
 
 
