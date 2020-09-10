@@ -91,7 +91,6 @@ The following steps repeat the process until a special symbol is reached indicat
 ![img.png](http://jalammar.github.io/images/t/transformer_decoding_2.gif)
 
 ###### Final Linear and Softmax Layer
-
 * The output of the decoders is passed into a linear layer with softmax activation using which, the correct word is predicted.
 
 ![img.png](https://miro.medium.com/max/1250/1*ERDmCo4ihoB7Vntth88DOw.png)
